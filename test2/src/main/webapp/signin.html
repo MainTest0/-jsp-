@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	*{
+		box-sizing: border-box;
+		padding : 0;
+		margin : 0;
+	}
+	
+	form{
+		background-color: grey;
+		text-align: center;
+		display : flex;
+		flex : 1;
+		padding : 15px;
+	}
+	label{
+		font-size: 20px;
+		display : flex;
+		border : 1px solid black;
+		flex:3;
+		padding : 15px;
+	}
+	div{
+		background-color: red;
+		display:flex;
+	}
+</style>
+<body>
+	<!-- 	signin.html로 요청을하면 화면을 그리는 담당을 만들어주기
+	1. form 태그 중 method 속성, action 속성에 대해 알아보고
+	name 값과 password 값을 보낼 수 있는 화면을 구성하시오. (URL로 접근)
+	
+	2. 버튼을 누르면 연산 처리를 할 suvlet 객체를 만들어주세요
+	method 방식은 post가 적절하다
+	콘솔창에 연결받은 data를 출력하시오.
+ -->
+<form action="/test2/formtest" method="POST">
+		<div>
+			<label>id : </label><input type="text" id="id" name="id">
+		</div>
+		<div>
+			<label>pw : </label><input type="password" id="pw" name="pw"> <input
+				type="submit" value="서버로전송">
+		</div>
+	</form>
+	<form action="/test2/formtest" method="GET">
+		<div>
+			<label>id : </label><input type="text" id="id" name="id">
+		</div>
+		<div>
+			<label>pw : </label><input type="password" id="pw" name="pw"> <input
+				type="submit" value="서버로전송">
+		</div>
+	</form>
+
+	<form action ="/test2/formtest" method = "POST">
+	<div>
+		<label>2id : </label><input type = "text" name = "id">
+		</div>
+		<div>
+		<label>2pw : </label><input type= "password" name = "pw">
+		<input type = "submit" value = "로그인">
+		</div>
+	</form>
+
+</body>
+</html>

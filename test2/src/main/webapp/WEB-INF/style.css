@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	color: white;
+	background-color: grey;
+	text-align: center;
+	padding: 30px;
+}
+
+section {
+	display: flex;
+}
+
+nav {
+	flex: 1;
+	background-color: green;
+	list-style: none;
+	padding: 20px;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+article {
+	flex: 3;
+	background-color: yellow;
+	padding: 20px;
+}
+
+footer {
+	background-color: grey;
+	color: white;
+	text-align: center;
+	padding: 30px;
+}
