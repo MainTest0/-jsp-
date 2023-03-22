@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>demo1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 매핑하기 -->
+  <servlet>
+  <servlet-name> helloServlet </servlet-name>
+  <servlet-class> com.tenco.HelloServlet </servlet-class>		<!-- 패키지명 풀로 적어줘야함 H부분은 반드시 대문자 -->
+  </servlet>
+  
+  <!-- 외부에서 접근할 수 있도록 특정 문자열을 선언 -->
+ 	<servlet-mapping>
+ 		<servlet-name> helloServlet </servlet-name>
+ 		<url-pattern> /hs </url-pattern>
+ 	</servlet-mapping>
+  
+</web-app>

@@ -21,6 +21,7 @@ public class Formtest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(request.getParameter("id"));
 		System.out.println(request.getParameter("pw"));
+//		System.out.println(request.getRequestURL());
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

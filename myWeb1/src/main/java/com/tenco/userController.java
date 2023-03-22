@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/uc")
 public class userController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     public userController() {
         super();
         // 자바 클래스이지만 javaEE 표준기술인 http 통신할수있게해주는기술인 httpservlet 상속을 받았고
