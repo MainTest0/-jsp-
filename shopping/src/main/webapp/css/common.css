@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* 웹 폰트 불러오기 (구글폰트 검색) */
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap')
+	;
+
+/* 폰트 적용하기 */
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+nav{
+	
+}
+
+
+
+
+

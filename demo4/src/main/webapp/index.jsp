@@ -15,9 +15,9 @@
 		<input type = "submit" value = "로그인">
 	</form>
 	<%--Session 클래스에 사용자 이름이 저장되어있으며 Login 상태를 유지합니다.--%>
-	<%
+	<%// 로그인된 상태
 		if(session.getAttribute("username") != null){
-			// 로그인된 상태%>
+	%>
 			<p> 
 			현재 로그인 상태입니다. 사용자 이름 : <%=session.getAttribute("username") %>
 			</p>
