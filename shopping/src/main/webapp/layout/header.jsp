@@ -13,20 +13,25 @@
 	body{
 		height: 100vh;
 	}
-
-	ul {
-	display: flex;
-	list-style: none;
-	text-decoration: none;
-		color:#fff;
-	}
 	
+	ul{
+		display:flex;
+		justify-content: right;
+		align-items: right;
+	}
 	li{
 		width: 100vh;
 		background-color: #F9D509;
 		list-style: none;
-	text-decoration: none;
+		display:flex;
+		justify-content: right;
+		align-items: right;
+	}
+	
+	a{
 		color:#fff;
+		text-decoration: none;
+		
 	}
 	
 </style>
