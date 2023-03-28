@@ -39,6 +39,8 @@ public class MyServlet extends HttpServlet {
 		System.out.println(testServerIp);
 		System.out.println(realServerIp);
 		
+		System.out.println("왔다");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

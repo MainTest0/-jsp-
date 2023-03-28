@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.tenco.todo.dto.CategoryDTO;
+import com.tenco.todo.dto.TodoDTO;
 import com.tenco.todo.utils.DBHelper;
 
 public class CategoryDAO implements ICategoryRepo{
@@ -21,9 +21,9 @@ public class CategoryDAO implements ICategoryRepo{
 
 	@Override
 	// 카테고리 테이블이 다중행이라서 ArrayList 받아야함
-	public ArrayList<CategoryDTO> select() {
+	public ArrayList<TodoDTO> select() {
 		
-		ArrayList<CategoryDTO> list = new ArrayList<>();
+		ArrayList<TodoDTO> list = new ArrayList<>();
 		
 		String strQuery = " SELECT * FROM category ";
 		PreparedStatement pstmt = null;
@@ -35,7 +35,7 @@ public class CategoryDAO implements ICategoryRepo{
 			while(rs.next()) {
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
-				CategoryDTO dto = new CategoryDTO(id, name);
+				TodoDTO dto = new TodoDTO(id, name, name, id, id, name);
 				list.add(dto);
 			}
 		} catch (Exception e) {

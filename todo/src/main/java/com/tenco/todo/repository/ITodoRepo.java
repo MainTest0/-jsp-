@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import com.tenco.todo.dto.CategoryDTO;
 
-public interface ICategoryRepo {
+public interface ITodoRepo {
 
 	ArrayList<CategoryDTO> select();
 
-	int insert(String name);
+	void insert();
 
-	int update(int id, String name);
+	void update();
 
 	int delete(int id);
 
