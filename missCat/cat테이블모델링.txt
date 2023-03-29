@@ -1,0 +1,27 @@
+-- CREATE DATABASE cat;
+-- USE cat;
+
+CREATE TABLE cat(
+	name VARCHAR(50) NOT NULL,
+	gender VARCHAR(50) NOT NULL,
+    age VARCHAR(10),
+    favorite VARCHAR(200),
+    hate VARCHAR(200)
+);
+
+INSERT INTO cat(name, gender, age, favorite, hate)
+VALUES ('호두', '남', '8', '할퀴기', '밥안주기');
+    
+SELECT * FROM cat;
+
+-- DROP TABLE cat;
+
+DELETE FROM cat WHERE name = 'name';
+
+UPDATE cat 
+SET name = '호두',
+gender = '남',
+age = '5',
+favorite = '사냥놀이',
+hate = '일찍'
+WHERE name = '호두';
