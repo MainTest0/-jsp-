@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+footer {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 100px;
+	background-color: #eef2f4;
+}
+
+.footer_first {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}

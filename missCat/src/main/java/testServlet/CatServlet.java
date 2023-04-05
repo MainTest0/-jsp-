@@ -17,53 +17,50 @@ import repository.CatInfoDAO;
 @WebServlet("/CatServlet")
 public class CatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	CatInfoDAO dao;
 
 	public CatServlet() {
+		super();
+		dao = new CatInfoDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		CatInfoDAO dao = new CatInfoDAO();
-		// 주소 설계
-		// http://localhost:8080/todo/cTest?action=delete&cid=1
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
-		if ("delete".equals(action)) {
-//			String cid = request.getParameter("cid");
-//			dao.delete(Integer.parseInt(cid));
-//			response.sendRedirect("/todo/cTest");
-		} else {
+		if ("select".equals(action)) {
 			ArrayList<CatInfoDTO> resultList = dao.select();
 			request.setAttribute("list", resultList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("selectTest.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("cat/selectTest.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String correctionName = request.getParameter("correctionName");
 		String name = request.getParameter("name");
 		String gender = request.getParameter("gender");
 		String age = request.getParameter("age");
 		String favorite = request.getParameter("favorite");
 		String hate = request.getParameter("hate");
-		CatInfoDAO catInfoDAO  = new CatInfoDAO();
-		String action = request.getParameter("action"); 
-		int responseCount = 0; 
-		if(action.equals("update")) {
-			name = request.getParameter("correctionName");
-			name = request.getParameter("name");
-			name = request.getParameter("gender");
-			name = request.getParameter("age");
-			name = request.getParameter("favorite");
-			name = request.getParameter("hate");
-			responseCount  = catInfoDAO.update(correctionName, name, gender, age, favorite, hate);
-		} else if(action.equals("insert")) {
-			responseCount = catInfoDAO.insert(name, gender, age, favorite, hate);
-		}
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/plain");
+		String action = request.getParameter("action");
 		PrintWriter out = response.getWriter();
-		out.print("적용된 갯수 확인 : " + responseCount);
+
+		if (action.equals("update")) {
+			dao.update(correctionName, name, gender, age, favorite, hate);
+			out.print("<script>alert('수정 완료');location.href='mainScreen.jsp'; </script>");
+		} else if (action.equals("insert")) {
+			dao.insert(name, gender, age, favorite, hate);
+			out.print("<script>alert('등록 완료');location.href='mainScreen.jsp'; </script>");
+		} else if (action.equals("delete")) {
+			dao.delete(name);
+			out.print("<script>alert('삭제 완료');location.href='mainScreen.jsp'; </script>");
+		}
 	}
 }

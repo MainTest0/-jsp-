@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+header{
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #D5D9E4;
+}
+.home{
+	display: flex;
+	background-color: #3366FF;
+	align-items: center;
+}
+.home p{
+	text-align: center;
+	font-size: large;
+	color:#fff;
+}
+
+.home a{
+	width:800px;
+}
+
+
+

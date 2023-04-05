@@ -2,17 +2,12 @@ package com.tenco.todo.dto;
 
 public class CategoryDTO {
 	
-	private int id;
+	private int id; 
 	private String name;
 	
 	public CategoryDTO(int id, String name) {
 		this.id = id;
 		this.name = name;
-	}
-
-	@Override
-	public String toString() {
-		return "CategoryDTO [id=" + id + ", name=" + name + "]";
 	}
 	
 	public int getId() {
@@ -26,6 +21,11 @@ public class CategoryDTO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "CategoryDTO [id=" + id + ", name=" + name + "]";
 	}
 	
 }

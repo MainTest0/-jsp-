@@ -5,22 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBHelper {
-	
+
 	private static final String DB_HOST = "localhost";
 	private static final String DB_PORT = "3306";
 	private static final String DB_DATABASE_NAME = "cat";
 	private static final String DB_CHARSET = "UTF-8";
 	private static final String DB_USER_NAME = "root";
 	private static final String DB_PASSWORD = "1234";
-	
+
 	Connection conn;
 
 	public Connection getConnection() {
-		if(conn == null) {
-			
+		if (conn == null) {
+
 			String urlFormat = "jdbc:mysql://%s:%s/%s?serverTimezone=Asia/Seoul&characterEncoding=%s";
-			String url = String.format(urlFormat, DB_HOST, DB_PORT, 
-														DB_DATABASE_NAME, DB_CHARSET);
+			String url = String.format(urlFormat, DB_HOST, DB_PORT, DB_DATABASE_NAME, DB_CHARSET);
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn = DriverManager.getConnection(url, DB_USER_NAME, DB_PASSWORD);
@@ -29,15 +28,15 @@ public class DBHelper {
 				e.printStackTrace();
 			}
 		}
-		
-		return conn; 
+
+		return conn;
 	}
-	
+
 	public void closeConnection() {
-		if(conn != null) {
+		if (conn != null) {
 			try {
 				conn.close();
-				conn = null; 
+				conn = null;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
